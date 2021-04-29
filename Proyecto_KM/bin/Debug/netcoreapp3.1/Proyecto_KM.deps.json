@@ -24,6 +24,7 @@
     ".NETCoreApp,Version=v3.1": {
       "Proyecto_KM/1.0.0": {
         "dependencies": {
+          "LibFarmacos": "1.0.0.0",
           "Microsoft.AspNetCore.Antiforgery": "3.1.0.0",
           "Microsoft.AspNetCore.Authentication.Abstractions": "3.1.0.0",
           "Microsoft.AspNetCore.Authentication.Cookies": "3.1.0.0",
@@ -312,6 +313,17 @@
         },
         "compile": {
           "Proyecto_KM.dll": {}
+        }
+      },
+      "LibFarmacos/1.0.0.0": {
+        "runtime": {
+          "LibFarmacos.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        },
+        "compile": {
+          "LibFarmacos.dll": {}
         }
       },
       "Microsoft.AspNetCore.Antiforgery/3.1.0.0": {
@@ -2011,6 +2023,11 @@
   "libraries": {
     "Proyecto_KM/1.0.0": {
       "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "LibFarmacos/1.0.0.0": {
+      "type": "reference",
       "serviceable": false,
       "sha512": ""
     },

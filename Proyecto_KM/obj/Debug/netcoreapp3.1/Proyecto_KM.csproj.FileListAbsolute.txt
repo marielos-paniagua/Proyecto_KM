@@ -34,3 +34,6 @@ C:\Users\casa\source\repos\Proyecto_KM\Proyecto_KM\obj\Debug\netcoreapp3.1\Proye
 C:\Users\casa\source\repos\Proyecto_KM\Proyecto_KM\obj\Debug\netcoreapp3.1\Proyecto_KM.pdb
 C:\Users\casa\source\repos\Proyecto_KM\Proyecto_KM\obj\Debug\netcoreapp3.1\Proyecto_KM.genruntimeconfig.cache
 C:\Users\casa\source\repos\Proyecto_KM\Proyecto_KM\obj\Debug\netcoreapp3.1\Proyecto_KM.csproj.CopyComplete
+C:\Users\casa\source\repos\Proyecto_KM\Proyecto_KM\bin\Debug\netcoreapp3.1\LibFarmacos.dll
+C:\Users\casa\source\repos\Proyecto_KM\Proyecto_KM\obj\Debug\netcoreapp3.1\Razor\Views\Buscar\buscar.cshtml.g.cs
+C:\Users\casa\source\repos\Proyecto_KM\Proyecto_KM\obj\Debug\netcoreapp3.1\Razor\Views\Buscar\ResultadoBusqueda.cshtml.g.cs

@@ -4,20 +4,11 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using Proyecto_KM.Models;
-using Microsoft.AspNetCore.Hosting;
-using System.IO;
 
 namespace Proyecto_KM.Utils
 {
-    public class Ingreso : Controller
+    public class IngresoController : Controller
     {
-
-        private readonly IHostingEnvironment _hostingEnvironment;
-
-        public Ingreso(IHostingEnvironment hostingEnvironment)
-        {
-            _hostingEnvironment = hostingEnvironment;
-        }
         public IActionResult Index()
         {
             return View();
@@ -132,6 +123,12 @@ namespace Proyecto_KM.Utils
                     {
 
                         Storage.Instance.tareasAgendadas.Encolar(taskRegistered);
+
+                        Arbol nodoArbol = new Arbol();
+                        nodoArbol.Nombre = Nombre;
+                        nodoArbol.Apellido = Apellido;
+                        nodoArbol.DPI = DPI;
+                        Storage.Instance.ArbolAVL.insertar(nodoArbol, nodoArbol.CompararNombreF);                        
 
                         return RedirectToAction("Index", "Agenda");
                     }

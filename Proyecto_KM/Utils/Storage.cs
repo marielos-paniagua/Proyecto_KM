@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Proyecto_KM.Models;
 using System.Threading.Tasks;
+using LibFarmacos;
 
 namespace Proyecto_KM.Utils
 {
@@ -22,5 +23,7 @@ namespace Proyecto_KM.Utils
         public ColaPrioridad<Models.Task> tareasAgendadas = new ColaPrioridad<Models.Task>();
         public CeldaHash hashTableInitialization = new CeldaHash();
         public List<CeldaHash> hashTable = new List<CeldaHash>();
+
+        public AVL<Arbol> ArbolAVL = new AVL<Arbol>();
     }
 }

@@ -87,6 +87,29 @@ namespace Proyecto_KM.Models
             return false;
         }
 
+        public bool BuscarHash(string key, ref Task task)
+        {
+            int i = 0;
+            int indice = 0;
+            bool encontrado = false;
 
-}
+            while (encontrado == false)
+            {
+                indice = HashF(key, i);
+
+                if (Storage.Instance.hashTable[indice].key == key)
+                {
+                    task = Storage.Instance.hashTable[indice].taskDetails;
+                    encontrado = true;
+                    return true;
+                }
+                else
+                {
+                    i++;
+                }
+
+            }
+            return false;
+        }
+    }
 }

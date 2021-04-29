@@ -43,6 +43,10 @@ namespace Proyecto_KM.Controllers
 
             Storage.Instance.tareasAgendadas.DesEncolar();
 
+            //Storage.Instance.ArbolAVL.Eliminar(Busqueda.elemento.NombreFarmaco,
+              //  Storage.Instance.ArbolAVL.padre.valorFarmaco.buscarEliminacionFarmacoBinario);
+
+
             return View("Index");
         }
     }
