@@ -10,9 +10,8 @@ namespace Proyecto_KM.Models
         public string Nombre { get; set; }
         public string Apellido { get; set; }
         public string DPI { get; set; }
-        public string Departamento { get; set; }       
-        public string MunicipioResidencia { get; set; }
         public int Prioridad { get; set; }
+        public string Fase { get; set; }
 
 
         public int CompareTo(Task other)

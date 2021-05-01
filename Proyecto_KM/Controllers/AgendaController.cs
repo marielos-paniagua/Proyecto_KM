@@ -19,7 +19,7 @@ namespace Proyecto_KM.Controllers
         public ActionResult finalizarTask()
         {
             CeldaHash taskContainer = new CeldaHash();
-            Models.Task taskToDelete = Storage.Instance.tareasAgendadas.Peek();
+            Models.Task taskToDelete = Storage.Instance.regionActual.tareasAgendadas.Peek();
             int i = 0;
             bool found = false;
             int index = 0;
@@ -41,7 +41,7 @@ namespace Proyecto_KM.Controllers
                 }
             }
 
-            Storage.Instance.tareasAgendadas.DesEncolar();
+            Storage.Instance.regionActual.tareasAgendadas.DesEncolar();
 
             //Storage.Instance.ArbolAVL.Eliminar(Busqueda.elemento.NombreFarmaco,
               //  Storage.Instance.ArbolAVL.padre.valorFarmaco.buscarEliminacionFarmacoBinario);

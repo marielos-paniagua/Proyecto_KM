@@ -8,8 +8,7 @@ namespace Proyecto_KM.Models
     public class Arbol
     {
         public string Nombre { get; set; }
-        public string Apellido { get; set; }
-        public string DPI { get; set; }
+        public string key { get; set; }
         public int CompareTo(object Paciente2)
         {
             return Nombre.CompareTo(((Arbol)Paciente2).Nombre);

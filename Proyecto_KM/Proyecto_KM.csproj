@@ -5,6 +5,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Session" Version="2.2.0" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Reference Include="LibFarmacos">
       <HintPath>wwwroot\LibFarmacos.dll</HintPath>
     </Reference>

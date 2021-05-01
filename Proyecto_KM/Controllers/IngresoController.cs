@@ -22,8 +22,6 @@ namespace Proyecto_KM.Utils
                 string Nombre = collection["Nombre"];
                 string Apellido = collection["Apellido"];
                 string DPI = collection["DPI"];
-                string Departamento = collection["Departamento"];
-                string MunicipioResidencia = collection["Municipio"];
                 string Prioridad = collection["Labor"];
                 int Priority = 0;
 
@@ -106,15 +104,14 @@ namespace Proyecto_KM.Utils
                     Nombre = Nombre.Replace(',', ' '),
                     Apellido = Apellido.Replace(',', ' '),
                     DPI = DPI.Replace(',', ' '),
-                    Departamento = Departamento.Replace(',', ' '),
-                    MunicipioResidencia = MunicipioResidencia.Replace(',', ' '),
                     Prioridad = Priority,
+                    Fase = Prioridad,
                 };
 
 
                 CeldaHash taskContainer = new CeldaHash();
 
-                int numberOfTasks = Storage.Instance.tareasAgendadas.tareasAgendadas();
+                int numberOfTasks = Storage.Instance.regionActual.tareasAgendadas.tareasAgendadas();
 
                 if (numberOfTasks <= 10)
                 {                   
@@ -122,13 +119,21 @@ namespace Proyecto_KM.Utils
                     if (taskContainer.insert(Nombre, taskRegistered))
                     {
 
-                        Storage.Instance.tareasAgendadas.Encolar(taskRegistered);
+                        Storage.Instance.regionActual.tareasAgendadas.Encolar(taskRegistered);
 
-                        Arbol nodoArbol = new Arbol();
-                        nodoArbol.Nombre = Nombre;
-                        nodoArbol.Apellido = Apellido;
-                        nodoArbol.DPI = DPI;
-                        Storage.Instance.ArbolAVL.insertar(nodoArbol, nodoArbol.CompararNombreF);                        
+                        Arbol nodoArbolN = new Arbol();
+                        nodoArbolN.Nombre = Nombre;
+                        Storage.Instance.ArbolAVLN.insertar(nodoArbolN, nodoArbolN.CompararNombreF);
+
+                        Arbol nodoArbolA = new Arbol();
+                        nodoArbolA.Nombre = Apellido;
+                        nodoArbolA.key = Nombre;
+                        Storage.Instance.ArbolAVLA.insertar(nodoArbolA, nodoArbolA.CompararNombreF);
+
+                        Arbol nodoArbolD = new Arbol();
+                        nodoArbolD.Nombre = DPI;
+                        nodoArbolD.key = Nombre;
+                        Storage.Instance.ArbolAVLD.insertar(nodoArbolD, nodoArbolD.CompararNombreF);
 
                         return RedirectToAction("Index", "Agenda");
                     }

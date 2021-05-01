@@ -1,18 +1,28 @@
 ﻿@model Proyecto_KM.Models.Task
 
-
-<div class="card horizontal">
-    <div class="card-stacked">
-        <div class="card-content">
-            <p>@Model.Nombre</p>
+<center>
+    <div class="card border-primary mb-3" style="max-width: 18rem;">
+        <div class="card-body">
+            <h5 class="card-title">Paciente</h5>
+            <p class="card-text">Nombre: @Model.Nombre</p>
         </div>
-        <div class="card-action flex-column">
-            <p>Nombre: @Model.Nombre</p>
-            <p>Apellido: @Model.Apellido</p>
-            <p>DPI: @Model.DPI</p>
-            <p>Departamento: @Model.Departamento</p>
-            <p>Municipio: @Model.MunicipioResidencia</p>
-
-        </div>
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">Apellido: @Model.Apellido</li>
+            <li class="list-group-item">DPI: @Model.DPI</li>
+            <li class="list-group-item">Fase: @Model.Fase</li>
+        </ul>
     </div>
-</div>
+</center>
+
+
+<style>
+    .container-fluid {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        height: 88vh;
+        background-image: url("/svg/waves_landing.svg");
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+</style>

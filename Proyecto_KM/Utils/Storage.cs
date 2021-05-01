@@ -20,10 +20,13 @@ namespace Proyecto_KM.Utils
             }
         }
 
-        public ColaPrioridad<Models.Task> tareasAgendadas = new ColaPrioridad<Models.Task>();
         public CeldaHash hashTableInitialization = new CeldaHash();
         public List<CeldaHash> hashTable = new List<CeldaHash>();
+        public List<Region> regionRegistrada = new List<Region>();
+        public Region regionActual = new Region();
 
-        public AVL<Arbol> ArbolAVL = new AVL<Arbol>();
+        public AVL<Arbol> ArbolAVLN = new AVL<Arbol>();
+        public AVL<Arbol> ArbolAVLA = new AVL<Arbol>();
+        public AVL<Arbol> ArbolAVLD = new AVL<Arbol>();
     }
 }
