@@ -19,13 +19,13 @@ namespace Proyecto_KM.Utils
         {
             try
             {
-                string Nombre = collection["Nombre"];
+                string Nombre = collection["Nombre"];//llenar variebles con los datos enviados
                 string Apellido = collection["Apellido"];
                 string DPI = collection["DPI"];
                 string Prioridad = collection["Labor"];
                 int Priority = 0;
 
-                switch (Prioridad)
+                switch (Prioridad)//dar valor a cada fase indicada por el paciente
                 {
                     case "1a":
                         {
@@ -99,7 +99,7 @@ namespace Proyecto_KM.Utils
                         break;
                 }
 
-                Task taskRegistered = new Models.Task()
+                Task taskRegistered = new Models.Task()//registrar paciente
                 {
                     Nombre = Nombre.Replace(',', ' '),
                     Apellido = Apellido.Replace(',', ' '),
@@ -111,29 +111,30 @@ namespace Proyecto_KM.Utils
 
                 CeldaHash taskContainer = new CeldaHash();
 
-                int numberOfTasks = Storage.Instance.regionActual.tareasAgendadas.tareasAgendadas();
+                int numberOfTasks = Storage.Instance.regionActual.tareasAgendadas.tareasAgendadas();//cantidad de pacientes ingresados
 
                 if (numberOfTasks <= 10)
                 {                   
 
-                    if (taskContainer.insert(Nombre, taskRegistered))
+                    if (taskContainer.insert(Nombre, taskRegistered))//ingresar paciente a tabla hash
                     {
 
-                        Storage.Instance.regionActual.tareasAgendadas.Encolar(taskRegistered);
+                        Storage.Instance.regionActual.tareasAgendadas.Encolar(taskRegistered);//encolar al paciente
 
-                        Arbol nodoArbolN = new Arbol();
-                        nodoArbolN.Nombre = Nombre;
-                        Storage.Instance.ArbolAVLN.insertar(nodoArbolN, nodoArbolN.CompararNombreF);
+                        Arbol nodoArbolN = new Arbol();//árbol AVL para búsquedas por nombre
+                        nodoArbolN.Nombre = Nombre;//insertar nombre
+                        nodoArbolN.key = Nombre;//insertar clave
+                        Storage.Instance.ArbolAVLN.insertar(nodoArbolN, nodoArbolN.CompararNombreF);//insertar en árbol AVL
 
-                        Arbol nodoArbolA = new Arbol();
-                        nodoArbolA.Nombre = Apellido;
-                        nodoArbolA.key = Nombre;
-                        Storage.Instance.ArbolAVLA.insertar(nodoArbolA, nodoArbolA.CompararNombreF);
+                        Arbol nodoArbolA = new Arbol();//árbol AVL para búsquedas por apellido
+                        nodoArbolA.Nombre = Apellido;//insertar apellido
+                        nodoArbolA.key = Nombre;//insertar clave
+                        Storage.Instance.ArbolAVLA.insertar(nodoArbolA, nodoArbolA.CompararNombreF);//insertar en árbol AVL
 
-                        Arbol nodoArbolD = new Arbol();
-                        nodoArbolD.Nombre = DPI;
-                        nodoArbolD.key = Nombre;
-                        Storage.Instance.ArbolAVLD.insertar(nodoArbolD, nodoArbolD.CompararNombreF);
+                        Arbol nodoArbolD = new Arbol();//árbol AVL para búsquedas por DPI
+                        nodoArbolD.Nombre = DPI;//insertar DPI
+                        nodoArbolD.key = Nombre;//insertar clave
+                        Storage.Instance.ArbolAVLD.insertar(nodoArbolD, nodoArbolD.CompararNombreF);//insertar en árbol AVL
 
                         return RedirectToAction("Index", "Agenda");
                     }

@@ -21,7 +21,7 @@ namespace Proyecto_KM.Controllers
 
         public IActionResult Index()
         {
-            if (Storage.Instance.hashTable.Count == 0)
+            if (Storage.Instance.hashTable.Count == 0)//agregar tabla hash
             {
                 Storage.Instance.hashTableInitialization.insertEmptyCells();
             }

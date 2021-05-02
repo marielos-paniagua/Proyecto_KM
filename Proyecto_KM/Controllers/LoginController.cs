@@ -18,30 +18,30 @@ namespace Proyecto_KM.Controllers
         }
 
         [TempData]
-        public string mensajeInicioSesion { get; set; }
+        public string mensajeInicioSesion { get; set; }//que mensaje dar
 
         [HttpPost]
         public ActionResult Index(IFormCollection collection)
         {
             try
             {
-                string Departamento = collection["Departamento"];
+                string Departamento = collection["Departamento"];//llenar variables con datos enviados
                 string Municipio = collection["Municipio"];
-                Region usuarioActual = new Region();
-                Storage.Instance.regionRegistrada.Add(usuarioActual);
+                Region usuarioActual = new Region();//crear un usuario para la región
+                Storage.Instance.regionRegistrada.Add(usuarioActual);//agregar región registrada
 
-                if (usuarioActual.registroUsuario(Departamento, Municipio) != null)
+                if (usuarioActual.registroUsuario(Departamento, Municipio) != null)//realizar registro de región
                 {
-                    if (usuarioActual.inicioSesionUsuario(Municipio) == null)
+                    if (usuarioActual.inicioSesionUsuario(Municipio) == null)//si no existe municipio
                     {
-                        mensajeInicioSesion = "Seleccione una región";
+                        mensajeInicioSesion = "Seleccione una región";//pedir que ingrese municipio
                         return RedirectToAction("Index");
 
                 }
                 else
                 {
-                    mensajeInicioSesion = "";
-                    Storage.Instance.regionActual = usuarioActual.inicioSesionUsuario(Municipio);
+                    mensajeInicioSesion = "";//mensaje vacío
+                    Storage.Instance.regionActual = usuarioActual.inicioSesionUsuario(Municipio);//iniciar sesión con la región
                     return RedirectToAction("Index", "Home");
                     
                 }
@@ -56,7 +56,7 @@ namespace Proyecto_KM.Controllers
             }
         }
 
-        public ActionResult CerrarSesion()
+        public ActionResult CerrarSesion()//cerrar sesión
         {
             Region usuarioDefault = new Region();
             usuarioDefault.tareasAgendadas.colaPrioridad.Clear();

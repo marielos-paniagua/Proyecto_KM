@@ -16,7 +16,7 @@ namespace Proyecto_KM.Controllers
             return View();
         }
 
-        public string mensajeResultado { get; set; }
+        public string mensajeResultado { get; set; }//que mensaje enviar
 
 
         [HttpPost]
@@ -24,37 +24,37 @@ namespace Proyecto_KM.Controllers
         {
             try
             {
-                string tipo = collection["tipoBusqueda"];
+                string tipo = collection["tipoBusqueda"];//llenar variales con los datos enviados
                 string busqueda = collection["Busqueda"];
 
                 switch (tipo)
                 {
-                    case "nombre":
+                    case "nombre"://si es una busqueda por nombre:
 
                         LibFarmacos.Nodo<Arbol> nodoEncontrado = Storage.Instance.ArbolAVLN.Buscar(Storage.Instance.ArbolAVLN.padre,
-                busqueda, Storage.Instance.ArbolAVLN.padre.valorFarmaco.buscarBinario);
+                busqueda, Storage.Instance.ArbolAVLN.padre.valorFarmaco.buscarBinario);//hallar paciente en el árbol AVL
 
-                        Models.Task Busqueda = new Models.Task();
+                        Models.Task Busqueda = new Models.Task();//datos del paciente
                         CeldaHash taskContainer = new CeldaHash();
-                        if (taskContainer.BuscarHash(busqueda, ref Busqueda))
+                        if (taskContainer.BuscarHash(busqueda, ref Busqueda))//si se encuentra el paciente en la tabla hash
                         {
-                            return View("ResultadoBusqueda", Busqueda);
+                            return View("ResultadoBusqueda", Busqueda);//devolver el resultado de la busqueda
                         }
 
                         return View();
                         break;
-                    case "apellido":
+                    case "apellido"://si es una busqueda por apellido:
 
                         LibFarmacos.Nodo<Arbol> nodoEncontradoA = Storage.Instance.ArbolAVLA.Buscar(Storage.Instance.ArbolAVLA.padre,
-                            busqueda, Storage.Instance.ArbolAVLA.padre.valorFarmaco.buscarBinario);
+                            busqueda, Storage.Instance.ArbolAVLA.padre.valorFarmaco.buscarBinario);//hallar paciente en el árbol AVL
 
-                        busqueda = nodoEncontradoA.valorFarmaco.key;
+                        busqueda = nodoEncontradoA.valorFarmaco.key;//utilizar la clave
 
-                        Models.Task BusquedaA = new Models.Task();
+                        Models.Task BusquedaA = new Models.Task();//datos de paciente
                         CeldaHash taskContainerA = new CeldaHash();
-                        if (taskContainerA.BuscarHash(busqueda, ref BusquedaA))
+                        if (taskContainerA.BuscarHash(busqueda, ref BusquedaA))//si se encuentra el paciente en la tabla hash
                         {
-                            return View("ResultadoBusqueda", BusquedaA);
+                            return View("ResultadoBusqueda", BusquedaA);//devolver el resultado de la busqueda
                         }
 
 
@@ -64,15 +64,15 @@ namespace Proyecto_KM.Controllers
                     case "DPI":
 
                         LibFarmacos.Nodo<Arbol> nodoEncontradoD = Storage.Instance.ArbolAVLD.Buscar(Storage.Instance.ArbolAVLD.padre,
-                busqueda, Storage.Instance.ArbolAVLD.padre.valorFarmaco.buscarBinario);
+                busqueda, Storage.Instance.ArbolAVLD.padre.valorFarmaco.buscarBinario);//hallar paciente en el árbol AVL
 
-                        busqueda = nodoEncontradoD.valorFarmaco.key;
+                        busqueda = nodoEncontradoD.valorFarmaco.key;//utilizar la clave
 
-                        Models.Task BusquedaD = new Models.Task();
+                        Models.Task BusquedaD = new Models.Task();//datos de paciente
                         CeldaHash taskContainerD = new CeldaHash();
-                        if (taskContainerD.BuscarHash(busqueda, ref BusquedaD))
+                        if (taskContainerD.BuscarHash(busqueda, ref BusquedaD))//si se encuentra el paciente en la tabla hash
                         {
-                            return View("ResultadoBusqueda", BusquedaD);
+                            return View("ResultadoBusqueda", BusquedaD);//devolver el resultado de la busqueda
                         }
 
                         return View();
