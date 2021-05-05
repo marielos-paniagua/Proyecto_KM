@@ -31,12 +31,12 @@ namespace Proyecto_KM.Controllers
                 if (Storage.Instance.hashTable[index].key.Equals(taskToDelete.Nombre))//si se halla
                 {
 
-                    Storage.Instance.ArbolAVLN.Eliminar(taskToDelete.Nombre,
-                        Storage.Instance.ArbolAVLN.padre.valorFarmaco.buscarEliminacionBinario);
-                    Storage.Instance.ArbolAVLA.Eliminar(taskToDelete.Nombre,
-                        Storage.Instance.ArbolAVLA.padre.valorFarmaco.buscarEliminacionBinario);
-                    Storage.Instance.ArbolAVLD.Eliminar(taskToDelete.Nombre,
-                        Storage.Instance.ArbolAVLD.padre.valorFarmaco.buscarEliminacionBinario);
+                    Storage.Instance.regionActual.ArbolAVLN.Eliminar(taskToDelete.Nombre,
+                        Storage.Instance.regionActual.ArbolAVLN.padre.valorFarmaco.buscarEliminacionBinario);
+                    Storage.Instance.regionActual.ArbolAVLA.Eliminar(taskToDelete.Nombre,
+                        Storage.Instance.regionActual.ArbolAVLA.padre.valorFarmaco.buscarEliminacionBinario);
+                    Storage.Instance.regionActual.ArbolAVLD.Eliminar(taskToDelete.Nombre,
+                        Storage.Instance.regionActual.ArbolAVLD.padre.valorFarmaco.buscarEliminacionBinario);
 
                     found = true;
                     Storage.Instance.hashTable[index].key = null;//eliminar la clave

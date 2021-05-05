@@ -124,17 +124,17 @@ namespace Proyecto_KM.Utils
                         Arbol nodoArbolN = new Arbol();//árbol AVL para búsquedas por nombre
                         nodoArbolN.Nombre = Nombre;//insertar nombre
                         nodoArbolN.key = Nombre;//insertar clave
-                        Storage.Instance.ArbolAVLN.insertar(nodoArbolN, nodoArbolN.CompararNombreF);//insertar en árbol AVL
+                        Storage.Instance.regionActual.ArbolAVLN.insertar(nodoArbolN, nodoArbolN.CompararNombreF);//insertar en árbol AVL
 
                         Arbol nodoArbolA = new Arbol();//árbol AVL para búsquedas por apellido
                         nodoArbolA.Nombre = Apellido;//insertar apellido
                         nodoArbolA.key = Nombre;//insertar clave
-                        Storage.Instance.ArbolAVLA.insertar(nodoArbolA, nodoArbolA.CompararNombreF);//insertar en árbol AVL
+                        Storage.Instance.regionActual.ArbolAVLA.insertar(nodoArbolA, nodoArbolA.CompararNombreF);//insertar en árbol AVL
 
                         Arbol nodoArbolD = new Arbol();//árbol AVL para búsquedas por DPI
                         nodoArbolD.Nombre = DPI;//insertar DPI
                         nodoArbolD.key = Nombre;//insertar clave
-                        Storage.Instance.ArbolAVLD.insertar(nodoArbolD, nodoArbolD.CompararNombreF);//insertar en árbol AVL
+                        Storage.Instance.regionActual.ArbolAVLD.insertar(nodoArbolD, nodoArbolD.CompararNombreF);//insertar en árbol AVL
 
                         return RedirectToAction("Index", "Agenda");
                     }

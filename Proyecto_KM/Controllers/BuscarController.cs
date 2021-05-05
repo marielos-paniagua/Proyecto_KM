@@ -31,8 +31,8 @@ namespace Proyecto_KM.Controllers
                 {
                     case "nombre"://si es una busqueda por nombre:
 
-                        LibFarmacos.Nodo<Arbol> nodoEncontrado = Storage.Instance.ArbolAVLN.Buscar(Storage.Instance.ArbolAVLN.padre,
-                busqueda, Storage.Instance.ArbolAVLN.padre.valorFarmaco.buscarBinario);//hallar paciente en el árbol AVL
+                        LibFarmacos.Nodo<Arbol> nodoEncontrado = Storage.Instance.regionActual.ArbolAVLN.Buscar(Storage.Instance.regionActual.ArbolAVLN.padre,
+                busqueda, Storage.Instance.regionActual.ArbolAVLN.padre.valorFarmaco.buscarBinario);//hallar paciente en el árbol AVL
 
                         Models.Task Busqueda = new Models.Task();//datos del paciente
                         CeldaHash taskContainer = new CeldaHash();
@@ -45,8 +45,8 @@ namespace Proyecto_KM.Controllers
                         break;
                     case "apellido"://si es una busqueda por apellido:
 
-                        LibFarmacos.Nodo<Arbol> nodoEncontradoA = Storage.Instance.ArbolAVLA.Buscar(Storage.Instance.ArbolAVLA.padre,
-                            busqueda, Storage.Instance.ArbolAVLA.padre.valorFarmaco.buscarBinario);//hallar paciente en el árbol AVL
+                        LibFarmacos.Nodo<Arbol> nodoEncontradoA = Storage.Instance.regionActual.ArbolAVLA.Buscar(Storage.Instance.regionActual.ArbolAVLA.padre,
+                            busqueda, Storage.Instance.regionActual.ArbolAVLA.padre.valorFarmaco.buscarBinario);//hallar paciente en el árbol AVL
 
                         busqueda = nodoEncontradoA.valorFarmaco.key;//utilizar la clave
 
@@ -63,8 +63,8 @@ namespace Proyecto_KM.Controllers
                         break;
                     case "DPI":
 
-                        LibFarmacos.Nodo<Arbol> nodoEncontradoD = Storage.Instance.ArbolAVLD.Buscar(Storage.Instance.ArbolAVLD.padre,
-                busqueda, Storage.Instance.ArbolAVLD.padre.valorFarmaco.buscarBinario);//hallar paciente en el árbol AVL
+                        LibFarmacos.Nodo<Arbol> nodoEncontradoD = Storage.Instance.regionActual.ArbolAVLD.Buscar(Storage.Instance.regionActual.ArbolAVLD.padre,
+                busqueda, Storage.Instance.regionActual.ArbolAVLD.padre.valorFarmaco.buscarBinario);//hallar paciente en el árbol AVL
 
                         busqueda = nodoEncontradoD.valorFarmaco.key;//utilizar la clave
 

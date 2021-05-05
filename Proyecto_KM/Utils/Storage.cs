@@ -25,8 +25,5 @@ namespace Proyecto_KM.Utils
         public List<Region> regionRegistrada = new List<Region>();//registro de región ingresadas
         public Region regionActual = new Region();//región en la que inicia sesión
 
-        public AVL<Arbol> ArbolAVLN = new AVL<Arbol>();//arból AVL para nombre
-        public AVL<Arbol> ArbolAVLA = new AVL<Arbol>();//árbol AVL para apellido
-        public AVL<Arbol> ArbolAVLD = new AVL<Arbol>();//árbol AVL para DPI
     }
 }
