@@ -33,11 +33,11 @@ namespace Proyecto_KM.Controllers
                 {
 
                     Storage.Instance.regionActual.ArbolAVLN.Eliminar(taskToDelete.Nombre,
-                        Storage.Instance.regionActual.ArbolAVLN.padre.valorFarmaco.buscarEliminacionBinario);
+                        Storage.Instance.regionActual.ArbolAVLN.padre.valorFarmaco.buscarEliminacionBinario);//eliminar paciente del árbol AVL para Nombre
                     Storage.Instance.regionActual.ArbolAVLA.Eliminar(taskToDelete.Nombre,
-                        Storage.Instance.regionActual.ArbolAVLA.padre.valorFarmaco.buscarEliminacionBinario);
+                        Storage.Instance.regionActual.ArbolAVLA.padre.valorFarmaco.buscarEliminacionBinario);//eliminar paciente del árbol AVL para Apellido
                     Storage.Instance.regionActual.ArbolAVLD.Eliminar(taskToDelete.Nombre,
-                        Storage.Instance.regionActual.ArbolAVLD.padre.valorFarmaco.buscarEliminacionBinario);
+                        Storage.Instance.regionActual.ArbolAVLD.padre.valorFarmaco.buscarEliminacionBinario);//eliminar paciente del árbol AVL para DPI
 
                     found = true;
                     Storage.Instance.hashTable[index].key = null;//eliminar la clave
@@ -87,22 +87,19 @@ namespace Proyecto_KM.Controllers
         {
             try
             {
-
-
-
-                string Fecha = collection["Fecha"];
+                string Fecha = collection["Fecha"];//recolectar datos ingresados
                 string NVacuna = collection["Vacuna"];
                 string Dosis = collection["Dosis"];
 
 
 
-                Storage.Instance.regionActual.tareasAgendadas.colaPrioridad[0].NVacuna = NVacuna;
-                Storage.Instance.regionActual.tareasAgendadas.colaPrioridad[0].Dosis = Dosis;
-                Storage.Instance.regionActual.tareasAgendadas.colaPrioridad[0].Fecha = Fecha;
+                Storage.Instance.regionActual.tareasAgendadas.colaPrioridad[0].NVacuna = NVacuna;//dar valor a Nombre de la vacuna
+                Storage.Instance.regionActual.tareasAgendadas.colaPrioridad[0].Dosis = Dosis;//dar valor a la dosis de la vacuna
+                Storage.Instance.regionActual.tareasAgendadas.colaPrioridad[0].Fecha = Fecha;//dar valor a la fecha aplicada
 
 
 
-                finalizarTask();
+                finalizarTask();//ir al método
 
 
 

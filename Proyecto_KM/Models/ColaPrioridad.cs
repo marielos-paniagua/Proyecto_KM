@@ -17,7 +17,7 @@ namespace Proyecto_KM.Models
             IenumColaPrioridad = (IEnumerable<Task>)colaPrioridad;
         }
 
-        public int hora = 7;
+        public int hora = 7;//hora de inicio cita pacientes
         public void Encolar(Task tareaParaAgendar)//encolar pacientes
         {
             colaPrioridad.Add(tareaParaAgendar);//agregar paciente a la cola de prioridad
@@ -37,16 +37,24 @@ namespace Proyecto_KM.Models
                 colaPrioridad[pi] = tmp;//realizar cambio con el temporal
                 ci = pi;//igualar
             }
-            for (int i = 0; i < colaPrioridad.Count; i++)
+
+            int j = 0, k = 0, minuto = 00;//variables
+            for (int i = 0; i < colaPrioridad.Count; i++)//repetir asignación de horario para cada paciente
             {
-                int minuto = i * 15;
-                if (minuto>=60)
+                if (j == 3)//si hay tres pacientes a una hora
                 {
-                    hora++;
-                    minuto = minuto - 60;
+                    j = 0;//igualar a 0
+                    k++;//aumentar los minutos
+                    minuto = k * 15;//dar minutos a pacientes
+                    if (minuto >= 60)//si se pasa de 60:
+                    {
+                        hora++;//aumentar hora
+                        minuto = minuto - 60;//devolver minutos
+                    }
                 }
-                Storage.Instance.regionActual.tareasAgendadas.colaPrioridad[i].hora = hora;
-                Storage.Instance.regionActual.tareasAgendadas.colaPrioridad[i].minuto = minuto;
+                Storage.Instance.regionActual.tareasAgendadas.colaPrioridad[i].hora = hora;//dar valor a la hora
+                Storage.Instance.regionActual.tareasAgendadas.colaPrioridad[i].minuto = minuto;//dar valor a los minutos
+                j++;//aumentar pacientes
             }
         }
        
