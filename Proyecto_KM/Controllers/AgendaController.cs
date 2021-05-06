@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Proyecto_KM.Utils;
 using Proyecto_KM.Models;
+using Microsoft.AspNetCore.Http;
 
 
 namespace Proyecto_KM.Controllers
@@ -53,5 +54,66 @@ namespace Proyecto_KM.Controllers
                      
             return View("Index");
         }
+        public ActionResult Reagendar()//eliminar el paciente con mayor prioridad
+        {
+            CeldaHash taskcontainer = new CeldaHash();
+            Models.Task taskToDelete = Storage.Instance.regionActual.tareasAgendadas.Peek();//hallar paciente con mayor prioridad
+            int i = 0;
+            bool found = false;
+            int index = 0;
+            while (!found)//mientras no sea encontrado
+            {
+                index = taskcontainer.HashF(taskToDelete.Nombre, i); //hallar posicion por medio la funcion
+                if (Storage.Instance.hashTable[index].key.Equals(taskToDelete.Nombre))//si se encuentra
+                {
+                    found = true;
+                }
+                else
+                {
+                    found = false;
+                    i++;
+                }
+            }
+            Storage.Instance.regionActual.tareasAgendadas.DesEncolar(); //desencolar de la cola de prioridad
+            Storage.Instance.regionActual.tareasAgendadas.Encolar(taskToDelete); //volver a encolar
+            return View("Index");
+        }
+        public ActionResult Vacunacion()
+        {
+            return View();
+        }
+        [HttpPost]
+        public ActionResult Vacunacion(IFormCollection collection)
+        {
+            try
+            {
+
+
+
+                string Fecha = collection["Fecha"];
+                string NVacuna = collection["Vacuna"];
+                string Dosis = collection["Dosis"];
+
+
+
+                Storage.Instance.regionActual.tareasAgendadas.colaPrioridad[0].NVacuna = NVacuna;
+                Storage.Instance.regionActual.tareasAgendadas.colaPrioridad[0].Dosis = Dosis;
+                Storage.Instance.regionActual.tareasAgendadas.colaPrioridad[0].Fecha = Fecha;
+
+
+
+                finalizarTask();
+
+
+
+                return View("Index");
+            }
+            catch
+            {
+                return View();
+            }
+
+        }
     }
+
 }

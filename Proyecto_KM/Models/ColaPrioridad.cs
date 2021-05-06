@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Proyecto_KM.Models;
+using Proyecto_KM.Utils;
 
 namespace Proyecto_KM.Models
 {
@@ -16,6 +17,7 @@ namespace Proyecto_KM.Models
             IenumColaPrioridad = (IEnumerable<Task>)colaPrioridad;
         }
 
+        public int hora = 7;
         public void Encolar(Task tareaParaAgendar)//encolar pacientes
         {
             colaPrioridad.Add(tareaParaAgendar);//agregar paciente a la cola de prioridad
@@ -35,8 +37,19 @@ namespace Proyecto_KM.Models
                 colaPrioridad[pi] = tmp;//realizar cambio con el temporal
                 ci = pi;//igualar
             }
+            for (int i = 0; i < colaPrioridad.Count; i++)
+            {
+                int minuto = i * 15;
+                if (minuto>=60)
+                {
+                    hora++;
+                    minuto = minuto - 60;
+                }
+                Storage.Instance.regionActual.tareasAgendadas.colaPrioridad[i].hora = hora;
+                Storage.Instance.regionActual.tareasAgendadas.colaPrioridad[i].minuto = minuto;
+            }
         }
-
+       
         public Task DesEncolar()//eliminar paciente
         {
 

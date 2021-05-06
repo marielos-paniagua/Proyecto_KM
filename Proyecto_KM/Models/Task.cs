@@ -12,6 +12,12 @@ namespace Proyecto_KM.Models
         public string DPI { get; set; }
         public int Prioridad { get; set; }
         public string Fase { get; set; }
+        public int hora { get; set; }
+        public int minuto { get; set; }
+        public string NVacuna { get; set; }
+        public string Fecha { get; set; }
+        public string Dosis { get; set; }
+
 
 
         public int CompareTo(Task other)//comparar las prioridades

@@ -78,3 +78,4 @@ C:\Users\HP\Desktop\PROYECTOOO\Proyecto_KM\Proyecto_KM\obj\Debug\netcoreapp3.1\P
 C:\Users\HP\Desktop\PROYECTOOO\Proyecto_KM\Proyecto_KM\obj\Debug\netcoreapp3.1\staticwebassets\Proyecto_KM.StaticWebAssets.Manifest.cache
 C:\Users\HP\Desktop\PROYECTOOO\Proyecto_KM\Proyecto_KM\obj\Debug\netcoreapp3.1\staticwebassets\Proyecto_KM.StaticWebAssets.xml
 C:\Users\HP\Desktop\PROYECTOOO\Proyecto_KM\Proyecto_KM\obj\Debug\netcoreapp3.1\Proyecto_KM.genruntimeconfig.cache
+C:\Users\HP\Desktop\PROYECTOOO\Proyecto_KM\Proyecto_KM\obj\Debug\netcoreapp3.1\Razor\Views\Agenda\Vacunacion.cshtml.g.cs
