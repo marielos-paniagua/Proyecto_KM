@@ -38,5 +38,15 @@ namespace Proyecto_KM.Models
         }
 
 
+        public string logEspera()
+        {
+            return "Nombre: " + Nombre + " " + Apellido + " DPI: " + DPI + " Cita: " + hora + ":" + minuto;
+        }
+
+        public string logVacunados()
+        {
+            return "Nombre: " + Nombre + " " + Apellido + " DPI: " + DPI + " Cita: " + Fecha + ", " + hora + ":" + minuto + " Vacuna: " + NVacuna;
+        }
+
     }
 }

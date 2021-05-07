@@ -24,6 +24,7 @@ namespace Proyecto_KM.Utils
         public List<CeldaHash> hashTable = new List<CeldaHash>();//tabla hash
         public List<Region> regionRegistrada = new List<Region>();//registro de región ingresadas
         public Region regionActual = new Region();//región en la que inicia sesión
+        public List<Models.Task> vacunados = new List<Models.Task>();
 
     }
 }

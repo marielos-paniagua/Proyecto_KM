@@ -120,3 +120,4 @@ C:\Users\casa\Desktop\Proyecto\Proyecto_KM\Proyecto_KM\obj\Debug\netcoreapp3.1\P
 C:\Users\casa\Desktop\Proyecto\Proyecto_KM\Proyecto_KM\obj\Debug\netcoreapp3.1\Proyecto_KM.dll
 C:\Users\casa\Desktop\Proyecto\Proyecto_KM\Proyecto_KM\obj\Debug\netcoreapp3.1\Proyecto_KM.pdb
 C:\Users\casa\Desktop\Proyecto\Proyecto_KM\Proyecto_KM\obj\Debug\netcoreapp3.1\Proyecto_KM.genruntimeconfig.cache
+C:\Users\casa\Desktop\Proyecto\Proyecto_KM\Proyecto_KM\obj\Debug\netcoreapp3.1\Razor\Views\Utils\Index.cshtml.g.cs

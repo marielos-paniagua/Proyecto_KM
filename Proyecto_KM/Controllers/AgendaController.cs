@@ -97,7 +97,7 @@ namespace Proyecto_KM.Controllers
                 Storage.Instance.regionActual.tareasAgendadas.colaPrioridad[0].Dosis = Dosis;//dar valor a la dosis de la vacuna
                 Storage.Instance.regionActual.tareasAgendadas.colaPrioridad[0].Fecha = Fecha;//dar valor a la fecha aplicada
 
-
+                Storage.Instance.vacunados.Add(Storage.Instance.regionActual.tareasAgendadas.colaPrioridad[0]);
 
                 finalizarTask();//ir al método
 
