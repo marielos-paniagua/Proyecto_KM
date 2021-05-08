@@ -18,6 +18,7 @@ namespace Proyecto_KM.Models
         public AVL<Arbol> ArbolAVLN = new AVL<Arbol>(); //arbol avl para nombre
         public AVL<Arbol> ArbolAVLA = new AVL<Arbol>(); //arbol avl para apellido
         public AVL<Arbol> ArbolAVLD = new AVL<Arbol>(); //arbol avl para DPI
+
         public Region registroUsuario(string departamento, string municipio)//registro de la región
         {
             this.Departamento = departamento;//guardar departamento

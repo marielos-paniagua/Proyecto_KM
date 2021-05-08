@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\casa\\Desktop\\Proyecto\\Proyecto_KM\\Proyecto_KM\\Proyecto_KM.csproj": {}
+    "C:\\Users\\casa\\Desktop\\Proyecto_KM\\Proyecto_KM\\Proyecto_KM.csproj": {}
   },
   "projects": {
-    "C:\\Users\\casa\\Desktop\\Proyecto\\Proyecto_KM\\Proyecto_KM\\Proyecto_KM.csproj": {
+    "C:\\Users\\casa\\Desktop\\Proyecto_KM\\Proyecto_KM\\Proyecto_KM.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\casa\\Desktop\\Proyecto\\Proyecto_KM\\Proyecto_KM\\Proyecto_KM.csproj",
+        "projectUniqueName": "C:\\Users\\casa\\Desktop\\Proyecto_KM\\Proyecto_KM\\Proyecto_KM.csproj",
         "projectName": "Proyecto_KM",
-        "projectPath": "C:\\Users\\casa\\Desktop\\Proyecto\\Proyecto_KM\\Proyecto_KM\\Proyecto_KM.csproj",
+        "projectPath": "C:\\Users\\casa\\Desktop\\Proyecto_KM\\Proyecto_KM\\Proyecto_KM.csproj",
         "packagesPath": "C:\\Users\\casa\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\casa\\Desktop\\Proyecto\\Proyecto_KM\\Proyecto_KM\\obj\\",
+        "outputPath": "C:\\Users\\casa\\Desktop\\Proyecto_KM\\Proyecto_KM\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\casa\\AppData\\Roaming\\NuGet\\NuGet.Config",

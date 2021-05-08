@@ -8,6 +8,8 @@ namespace Proyecto_KM.Models
     public class Arbol
     {
         public string Nombre { get; set; }//variables
+        public string Apellido { get; set; }
+        public string DPI { get;set; }
         public string key { get; set; }
         public int CompareTo(object Paciente2)
         {
@@ -25,7 +27,7 @@ namespace Proyecto_KM.Models
 
         public int buscarEliminacionBinario(string InventarioF2, Arbol InventarioF)
         {
-            return InventarioF2.CompareTo(InventarioF.key);//comparación para hallar nodo a eliminar
+            return InventarioF2.CompareTo(InventarioF.Nombre);//comparación para hallar nodo a eliminar
         }
     }
 }

@@ -113,7 +113,7 @@ namespace Proyecto_KM.Utils
 
                 int numberOfTasks = Storage.Instance.regionActual.tareasAgendadas.tareasAgendadas();//cantidad de pacientes ingresados
 
-                if (numberOfTasks <= 10)
+                if (numberOfTasks <= 14)
                 {                   
 
                     if (taskContainer.insert(Nombre, taskRegistered))//ingresar paciente a tabla hash
@@ -135,6 +135,7 @@ namespace Proyecto_KM.Utils
                         nodoArbolD.Nombre = DPI;//insertar DPI
                         nodoArbolD.key = Nombre;//insertar clave
                         Storage.Instance.regionActual.ArbolAVLD.insertar(nodoArbolD, nodoArbolD.CompararNombreF);//insertar en árbol AVL
+
 
                         return RedirectToAction("Index", "Agenda");
                     }

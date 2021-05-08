@@ -28,26 +28,30 @@ namespace Proyecto_KM.Controllers
             {
 
                 index = taskContainer.HashF(taskToDelete.Nombre, i);//hallar posición por medio de la función
-
-                if (Storage.Instance.hashTable[index].key.Equals(taskToDelete.Nombre))//si se halla
+                try
                 {
+                    if (Storage.Instance.hashTable[index].key.Equals(taskToDelete.Nombre))//si se halla
+                    {
 
-                    Storage.Instance.regionActual.ArbolAVLN.Eliminar(taskToDelete.Nombre,
-                        Storage.Instance.regionActual.ArbolAVLN.padre.valorFarmaco.buscarEliminacionBinario);//eliminar paciente del árbol AVL para Nombre
-                    Storage.Instance.regionActual.ArbolAVLA.Eliminar(taskToDelete.Nombre,
-                        Storage.Instance.regionActual.ArbolAVLA.padre.valorFarmaco.buscarEliminacionBinario);//eliminar paciente del árbol AVL para Apellido
-                    Storage.Instance.regionActual.ArbolAVLD.Eliminar(taskToDelete.Nombre,
-                        Storage.Instance.regionActual.ArbolAVLD.padre.valorFarmaco.buscarEliminacionBinario);//eliminar paciente del árbol AVL para DPI
+                        Storage.Instance.regionActual.ArbolAVLN.Eliminar(taskToDelete.Nombre,
+                            Storage.Instance.regionActual.ArbolAVLN.padre.valorFarmaco.buscarEliminacionBinario);//eliminar paciente del árbol AVL para Nombre
+                        Storage.Instance.regionActual.ArbolAVLA.Eliminar(taskToDelete.Apellido,
+                            Storage.Instance.regionActual.ArbolAVLA.padre.valorFarmaco.buscarEliminacionBinario);//eliminar paciente del árbol AVL para Apellido
+                        Storage.Instance.regionActual.ArbolAVLD.Eliminar(taskToDelete.DPI,
+                            Storage.Instance.regionActual.ArbolAVLD.padre.valorFarmaco.buscarEliminacionBinario);//eliminar paciente del árbol AVL para DPI 
 
-                    found = true;
-                    Storage.Instance.hashTable[index].key = null;//eliminar la clave
-                    Storage.Instance.hashTable[index].taskDetails = null;//eliminar datos del paciente
-                    Storage.Instance.hashTable[index].state = CeldaHash.cellState.vacio;//desocupar celda
+                        found = true;
+                        Storage.Instance.hashTable[index].key = null;//eliminar la clave
+                        Storage.Instance.hashTable[index].taskDetails = null;//eliminar datos del paciente
+                        Storage.Instance.hashTable[index].state = CeldaHash.cellState.vacio;//desocupar celda
+                    }
+                    else
+                    {
+                        i++;
+                        found = false;
+                    }
                 }
-                else
-                {
-                    found = false;
-                }
+                catch { i++; }
             }
 
             Storage.Instance.regionActual.tareasAgendadas.DesEncolar();//desencolar de la cola de prioridad
