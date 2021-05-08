@@ -1,0 +1,132 @@
+﻿@{
+    ViewBag.Title = "Ingreso";
+}
+
+<div class="card mt-4 ml-auto mr-auto" style="box-shadow: 0px 2px 6px 0px rgba(0,0,0,0.3); width:40%;">
+
+    <div class="card-body m-auto text-center">
+        <form method="post" action="@Url.Action("Index", "Ingreso")" class="d-flex flex-column align-items-center text-center">
+            <div class="form-group">
+                <h3>Ingresar paciente</h3>
+            </div>
+
+            <div class="form-group">
+                <input type="text" class="form-control" name="Nombre" placeholder="Nombre" required>
+            </div>
+            <div class="form-group">
+                <input type="text" class="form-control" name="Apellido" placeholder="Apellido" required>
+            </div>
+            <div class="form-group">
+                <input type="text" class="form-control" name="DPI" placeholder="DPI" required>
+            </div>
+
+            <div class="form-group">
+                <label>Selecciona Prioridad</label>
+                <select class="form-control" name="Labor" required>
+                    <option value="1a">
+                        Trabajador de establecimientos de salud
+                        asistencial que atienden pacientes con
+                        COVID-19
+                    </option>
+                    <option value="1b">
+                        Estudiantes de ciencias de la salud y afines
+                        que realizan prácticas asistenciales en
+                        establecimientos de salud
+                    </option>
+                    <option value="1c">
+                        Trabajador de establecimientos de salud
+                        asistencial que atienden pacientes con
+                        COVID-19
+                    </option>
+                    <option value="1d">
+                        Cuerpos de socorro (bomberos y
+                        paramédicos de ambulancias, incluyendo
+                        cuerpos de socorro CONRED)
+                    </option>
+                    <option value="1d">
+                        Trabajadores
+                        de funerarias y personal que labora en
+                        instituciones de adultos mayores
+                    </option>
+                    <option value="1e">
+                        Personas internadas en hogares o
+                        instituciones de adultos mayores
+                    </option>
+                    <option value="1f">
+                        Trabajadores del sector salud
+                        (administrativos) no incluidos en sub-fases
+                        anteriores de acuerdo con otros factores
+                        de riesgo
+                    </option>
+                    <option value="2a">
+                        Adultos mayores de 70 y más años
+                    </option>
+                    <option value="2a">
+                        Adultos con una o más de las condiciones:
+                        Hipertensión arterial que
+                        requiere medicamento, diabetes, mellitus
+                    </option>
+                    <option value="2a">
+                        Adultos en condiciones de:
+                        enfermedad pulmonar crónica,
+                        enfermedad renal crónica, enfermedades
+                        cardiovasculares y cerebrovasculares
+                    </option>
+                    <option value="2a">
+                        Adultos en condiciones de:
+                        inmunosupresión (VIH, cáncer, uso de
+                        inmunosupresores) u obesidad (IMC ≥ 30)
+                    </option>
+                    <option value="2b">
+                        Adultos de 50 a 69 años
+                    </option>
+
+                    <option value="3a">
+                        Trabajadores sector seguridad nacional
+                        (incluye PNC, PMT, militares y personal del
+                        sistema penitenciario)
+                    </option>
+                    <option value="3b">
+                        Trabajadores registrados en
+                        municipalidades y que prestan
+                        servicios esenciales de electricidad, agua,
+                        recolección de basura
+                    </option>
+                    <option value="3c">
+                        Trabajadores sector educación (maestros
+                        nivel primario, básico, universitario, incluye
+                        funcionarios Ministerio de Educación)
+                    </option>
+                    <option value="3d">
+                        Trabajadores sector justicia, (jueces,
+                        personal en tribunales)
+                    </option>
+                    <option value="4a">
+                        Adultos de 40 a 49 años
+                    </option>
+                    <option value="4b">
+                        Adultos de 18 a 39 años
+                    </option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary">Registrar</button>
+            </div>
+
+            <hr />
+
+        </form>
+    </div>
+</div>
+
+<script type="text/javascript">
+    $('#datetimepicker').datetimepicker({
+        pickTime: false
+    });
+    $('#datepicker').datepicker({
+        format: 'dd/mm/yyyy'
+    });
+</script>
+
+

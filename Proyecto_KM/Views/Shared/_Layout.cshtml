@@ -1,0 +1,86 @@
+﻿@using Proyecto_KM.Utils;
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="~/twitter-bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <title>@ViewData["Title"]</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        @{
+            <a class="navbar-brand" href="@Url.Action("Index", "Home")">TaskApp</a>            
+        }
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse p-2" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    @{
+                        if (Storage.Instance.regionActual.Municipio == null)
+                        {
+                        <li class="nav-item">
+                        </li>
+                    }
+                    else
+                    {
+                        <li class="nav-item">
+                            <a class="nav-link" href="@Url.Action("Index","Ingreso")">Ingresar paciente</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="@Url.Action("Index","Agenda")">Agenda</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="@Url.Action("Index","Buscar")">Buscar</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="@Url.Action("Index","utils")">Reportes</a>
+                        </li>
+
+                    }
+
+                    }
+                    @{
+
+
+                    }
+                    </li>
+                </ul>
+                <ul class="navbar-nav ">
+                    @{
+                        if (Storage.Instance.regionActual.Municipio == null)
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link" href="@Url.Action("Index","Login")">Login</a>
+                            </li>
+
+                        }
+                        else
+                        {
+
+                            <li class="nav-item">
+                                <a class="nav-link" href="@Url.Action("CerrarSesion","Login")">Cerrar Sesion</a>
+                            </li>
+                        }
+
+                    }
+                </ul>
+            </div>
+        </nav>
+        <div class="">
+            <main role="main" class="">
+                @RenderBody()
+            </main>
+        </div>
+
+        <script src="~/jquery/jquery.min.js"></script>
+        <script src="~/twitter-bootstrap/js/bootstrap.js"></script>
+        <script src="~/bootstrap-datepicker/js/bootstrap-datepicker.js"></script>
+
+        @RenderSection("Scripts", required: false)
+    </body>
+</html>

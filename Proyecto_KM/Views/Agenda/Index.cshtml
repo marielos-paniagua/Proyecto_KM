@@ -1,0 +1,31 @@
+﻿@using Proyecto_KM.Utils
+@using Proyecto_KM.Models
+
+@{
+    ViewBag.Title = "Agenda";
+}
+
+
+<div class="container mt-5 mb-5">
+    @foreach (Proyecto_KM.Models.Task currentTask in Storage.Instance.regionActual.tareasAgendadas.IenumColaPrioridad)
+    {
+        if (currentTask.Nombre.Equals(Storage.Instance.regionActual.tareasAgendadas.Peek().Nombre))
+        {
+    <div class="alert alert-success alert-dismissible fade show mt-2" role="alert">
+        <strong>@currentTask.Nombre</strong> @currentTask.Apellido -- @currentTask.DPI--cita: @currentTask.hora:@currentTask.minuto
+    <button type="submit" class="close">
+        <span aria-hidden="true"><a href="@Url.Action("Vacunacion","Agenda")">Vacunado</a></span>
+        <span aria-hidden="true"><a href="@Url.Action("Reagendar","Agenda")">Reagendar</a></span>
+    </button>
+    </div>
+        }
+        else
+        {
+<div class="alert alert-success alert-dismissible fade show mt-2" role="alert">
+    <strong>@currentTask.Nombre</strong> @currentTask.Apellido -- @currentTask.DPI--cita: @currentTask.hora:@currentTask.minuto
+</div>
+        }
+
+    }
+
+</div>
